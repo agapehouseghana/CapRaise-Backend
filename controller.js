@@ -1,7 +1,7 @@
 const model = require('./model');
 
-exports.processCallback =(async (req, res) => {
-    const { payerPhoneNumber, referralCode, payerName, rail, amount, paymentChannel,serviceCode } = req.body;
+exports.processCallback = async (req, res) => {
+    const { payerPhoneNumber, referralCode, payerName, rail, amount, paymentChannel, serviceCode } = req.body;
 
     try {
         const newData = new model({
@@ -18,12 +18,12 @@ exports.processCallback =(async (req, res) => {
 
         console.log('Data saved to MongoDB');
 
-        res.json({ message: 'Callback processed and data saved successfully' });
+        res.status(200).json({ status: true, message: 'Callback processed and data saved successfully' });
     } catch (error) {
         console.error('Error saving data:', error);
-        res.status(500).json({ error: 'Failed to save data' });
+        res.status(500).json({ status: false, error: 'Failed to save data' });
     }
-});
+};
 
 exports.fetchData =(async (req, res) => {
     try {
