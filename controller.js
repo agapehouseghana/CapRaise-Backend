@@ -1,12 +1,12 @@
 const model = require('./model');
 
 exports.processCallback = async (req, res) => {
-    const { payerPhoneNumber, referralCode, payerName, rail, amount, paymentChannel, serviceCode } = req.body;
+    const { payerPhoneNumber, referalCode, payerName, rail, amount, paymentChannel, serviceCode } = req.body;
 
     try {
         const newData = new model({
             payerPhoneNumber,
-            referralCode,
+            referalCode,
             payerName,
             rail,
             amount,

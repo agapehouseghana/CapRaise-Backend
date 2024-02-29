@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const DataSchema = new mongoose.Schema({
     payerPhoneNumber: String,
-    referralCode: String,
+    referalCode: String,
     payerName: String,
     rail: String,
     amount: Number,
