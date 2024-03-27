@@ -6,7 +6,7 @@ const port = process.env.PORT ||  5000;
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:3000','http://localhost:3001',"https://capraise-hrdt.onrender.com","https://capraise-backend.onrender.com"],
+  origin: ['http://localhost:3000','http://localhost:3001',"https://capraise-hrdt.onrender.com","https://capraise-backend.onrender.com", "https://acc20.agapehouseghana.org/"],
 }));
 
 app.use(express.json())
